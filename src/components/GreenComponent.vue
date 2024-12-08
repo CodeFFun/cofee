@@ -32,8 +32,11 @@ const whichSlide = ref(0)
 </script>
 
 <template>
-    <SwapComponent  :swap="swap[whichSlide]" @one="(number) => whichSlide = number"/>
+  <SwapComponent  :swap="swap[whichSlide]" class="green" @one="(number) => whichSlide = number"/>
 </template>
 
-<style>
+<style >
+.green::before{
+  transform: scaleX(-1);
+}
 </style>

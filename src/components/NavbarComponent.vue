@@ -3,18 +3,12 @@
 </script>
 
 <template>
-     <nav class="nav">
+     <nav class="flex justify-center items-center w-screen p-[2rem] fixed">
         <img src="/ELLA-black_115x.png"  alt="Ella"/>
      </nav>
 </template>
 
 <style>
-   .nav{
-      background-color: inherit;
-      position: fixed;
-      text-align: center;
-      width: 100vw;
-      padding: 2rem;
-   }
+
 </style>
 

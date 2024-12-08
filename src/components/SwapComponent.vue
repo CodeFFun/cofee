@@ -17,7 +17,7 @@ defineEmits(['one']);
         <div class="swap-desc">
             <h1>{{ swap.heading }}</h1>
             <p>{{ swap.desc }}</p>
-            <ButtonComponent color="secondary">Shop Now</ButtonComponent>
+            <ButtonComponent color="secondary" style="width: 50%">Shop Now</ButtonComponent>
         </div>
         <div class="swap-icon">
             <div>
@@ -41,7 +41,7 @@ defineEmits(['one']);
 <style>
     .swap-section{
     min-height: 100vh;
-    max-width: 100vw;
+    width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -52,8 +52,8 @@ defineEmits(['one']);
     .swap-desc{
     display: flex;
     flex-direction: column;
+    max-width: fit-content;
     justify-content: center;
-    align-items: flex-start;
     color: #ffffff;
     padding: 25px 0px;
     margin: 40px 0;

@@ -6,6 +6,8 @@
   import BrownSection from "@/components/BrownSection.vue";
   import ArrivalsComponent from "@/components/ArrivalsComponent.vue";
   import GreenComponent from "@/components/GreenComponent.vue";
+  import MinishopComponent from "@/components/MinishopComponent.vue"
+  import HeroBanner from "@/components/HeroBanner.vue"
 </script>
 
 <template>
@@ -17,6 +19,8 @@
     <BrownSection />
     <ArrivalsComponent />
     <GreenComponent />
+    <MinishopComponent />
+    <HeroBanner />
   </main>
 </template>
 

@@ -4,19 +4,19 @@ import CardComponent from "./CardComponent.vue";
 
 const data = [
   {
-    image: "/collection-list-1.png",
+    image: "/img1.png",
     caption: "BEST ELLA ROASTED COFFEE",
   },
   {
-    image: "/collection-list-2.png",
+    image: "/img2.png",
     caption: "BEST ELLA ROASTED COFFEE",
   },
   {
-    image: "/collection-list-3.png",
+    image: "/img3.png",
     caption: "BEST ELLA ROASTED COFFEE",
   },
   {
-    image: "/collection-list-4.png",
+    image: "/img4.png",
     caption: "BEST ELLA ROASTED COFFEE",
   },
 ];
@@ -36,7 +36,7 @@ const data = [
           :key="coffee.image"
         >
           <CardComponent :image="coffee.image" />
-          <ButtonComponent color="primary" style="width: 100%;">Notify Me</ButtonComponent>
+          <ButtonComponent color="primary" style="width: 100%; border: 1px solid black">Add Now</ButtonComponent>
         </div>
 
     </div>
