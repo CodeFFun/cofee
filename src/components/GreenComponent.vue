@@ -36,7 +36,5 @@ const whichSlide = ref(0)
 </template>
 
 <style >
-.green::before{
-  transform: scaleX(-1);
-}
+
 </style>

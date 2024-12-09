@@ -1,13 +1,29 @@
 <script setup>
-  import { ref, computed } from "vue"
-  import ButtonComponent from "./ButtonComponent.vue"
+  import { ref, computed, onBeforeMount, watch } from "vue"
+  import { useRoute } from 'vue-router'
+ import ButtonComponent from "@/components/ButtonComponent.vue";
+ import NavbarComponent from "@/components/NavbarComponent.vue";
 
+  const route = useRoute()
+  const data = ref([])
+  const id = route.params.id
+ onBeforeMount(async () => {
+  const response  = await fetch(`https://fake-coffee-api.vercel.app/api/${id}`)
+   data.value = await response.json()
+   console.log(data.value[0].price)
+ })
   const packSize = ref(7)
   const quantity = ref(1)
-  const price = ref(132.30/7)
+  const price = ref(0)
+  // const price = ref(10)
   let deafultPrice = computed(() => {
     return `$${(price.value * packSize.value * quantity.value).toFixed(2)}`
   })
+  watch(data, (newData) => {
+      if (newData.length > 0) {
+        price.value = newData[0].price  // Update price when data is fetched
+      }
+    })
 
   const dec = () => {
     if(quantity.value > 1){
@@ -18,14 +34,11 @@
 </script>
 
 <template>
+  <NavbarComponent />
   <div class="h-screen p-[80px] overflow-hidden">
-    <h3 class="special-h3 text-[50px] ">Special Offer </h3>
     <div class="flex gap-2 p-5">
       <div>
-        <img src="/special1.png" class="max-w-[580px] h-[720px]"/>
-      </div>
-      <div>
-        <img src="/special2.png" class="w-[580px] h-[720px]"/>
+        <img :src="data[0].image_url" class="max-w-[1060px] max-h-[700px]"/>
       </div>
       <div class="h-full pl-[60px]">
         <span class="text-[40px] h3-font">Espresso Roast Blend (Whole Bean, Dark Roast)</span>

@@ -6,18 +6,22 @@ const data = [
   {
     image: "/img1.png",
     caption: "BEST ELLA ROASTED COFFEE",
+    price: "$52.40"
   },
   {
     image: "/img2.png",
     caption: "BEST ELLA ROASTED COFFEE",
+    price: "$32.40"
   },
   {
     image: "/img3.png",
     caption: "BEST ELLA ROASTED COFFEE",
+    price: "$87.99"
   },
   {
     image: "/img4.png",
     caption: "BEST ELLA ROASTED COFFEE",
+    price: "$12.40"
   },
 ];
 </script>
@@ -36,7 +40,7 @@ const data = [
           :key="coffee.image"
         >
           <CardComponent :image="coffee.image" />
-          <ButtonComponent color="primary" style="width: 100%; border: 1px solid black">Add Now</ButtonComponent>
+          <ButtonComponent color="primary" style="width: 100%; border: 1px solid black">Add To Cart: {{ coffee.price }}</ButtonComponent>
         </div>
 
     </div>
